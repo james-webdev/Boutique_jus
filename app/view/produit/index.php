@@ -1,7 +1,7 @@
 
 <?php 
 
-include("../app/view/layout/header.inc.php"); ?>
+include("../layout/header.inc.php"); ?>
 
 
 
@@ -35,4 +35,4 @@ Nb pages = <?= $pages; ?>
 
 
 
-<?php include("../app/view/layout/footer.inc.php"); ?>
+<?php include("../layout/footer.inc.php"); ?>

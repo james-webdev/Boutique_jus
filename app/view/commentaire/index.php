@@ -3,7 +3,7 @@
 
 
 
-include("../app/view/layout/header.inc.php");
+include("../layout/header.inc.php");
 
 
  ?>
@@ -24,6 +24,6 @@ foreach ($commentaires as $commentaire) { ?>
 
 <?php 
 
-include ("../app/view/layout/footer.inc.php");
+include ("../layout/footer.inc.php");
 
 ?>
