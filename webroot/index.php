@@ -1,6 +1,7 @@
 <?php
 
-
+ session_start();
+ 
 include("../app/config/config.inc.php");
 include("../core/pdo.inc.php");
 include("../core/core.php");

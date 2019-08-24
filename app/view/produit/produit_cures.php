@@ -1,55 +1,108 @@
 
 <?php 
 
-include("../layout/header.inc.php"); ?>
+include("../app/view/layout/header.inc.php");
 
 
-  <!-- Page Content -->
-  <div class="container">
+?>
+<!-- Page Content -->
+<div class="container">
 
-    
-<div class="row">
-     
-      <div class="col-lg-3">
-        <h1 class="col-lg-3">Nos Cures</h1>
-        <div class="list-group">
-          <a href="produit_lait_amandes.php" class="list-group-item active">Lait de Noix</a>
-          <a href="produit_jus.php" class="list-group-item">Nos Jus</a>
-        </div>
-      </div>
-    
-      
-      <div class="col-lg-9">
         <div class="row">
+         
+              <div class="col-lg-3">
+                      <h1 class="col-lg-3">Nos Cures</h1>
+                       <div class="list-group">
+                          <a href="index.php?module=produit&action=produit_laits" class="list-group-item active">Nos Laits</a>
+                          <a href="index.php?module=produit&action=produit_jus" class="list-group-item">Nos Jus</a>
+                       </div>
+             
+        
 
-          <div class="col-md-6">
-          <img class="card-img-top img-fluid" src="../images/cure_avancée.jpg" alt="">
-            <div class="card-body">
-              <h3 class="card-title">La Cure Avancée</h3>
-              <h4>€59,99</h4>
-              <p class="card-text">Notre seconde cure est plus intense et convient aux personnes qui ont déjà de l’expérience dans les cures de jus. Elle contient plus de jus verts afin que l’action détoxifiante soit effectuée plus en profondeur et de manière plus intense. Comme on dit, “vert à l’intérieur, propre à l’intérieur”.s</p>           
-            </div>
+              </div>
+        
+      
+             <div class="col-lg-9">
+        
+
+                      <?php 
+                      foreach ($produits as $produit) {
+                        //var_dump($produits);
+                       ?>
+                
+                  <div class= "row" style="margin-top: 50px;"> 
+
+                      <div class="col-sm-2">
+                      </div>
+                    
+                        <div class="col-sm-8">
+                            <img class="card-img-top img-fluid" src="<?= $produit ["pro_img_url"] ?>" alt="">
+                        </div>
+                     
+                      <div class="col-sm-2">
+                      </div>
+                  </div>
+
+
+                    <div class="row"> 
+                     <div class="col-sm-8">
+                            <div class="card-body">
+                                <h3 class="card-title"><?= $produit ["pro_title"] ?></h3>
+                                <p class="card-text"><?= $produit ["pro_descr"] ?></p>           
+                            </div>
+                      </div>
+                   
+                  
+            
+                   <div class="col-lg-4 prixcentre">       
+                         <h4 style="margin: 10px auto;">€<?= $produit ["pro_price"] ?></h4>
+                       <div class="variant-select-wrapper" style="margin: 5px auto;">
+                         <span>Durée:</span>
+                            <select data-variant-option-name="Durée">
+                                <option value="">Nombre de Jours</option>
+                                <option value="1 Jour - 49.99€">1 Jour - 49.99€</option>
+                                <option value="2 Jours - 99€">2 Jours - 99.99€</option>
+                                <option value="3 Jours - 139€">3 Jours - 139.99€</option>
+                                <option value="5 Jours - 169€">5 Jours - 169.99€</option>
+                            </select>
+                        </div>
+
+
+                   <form action="index.php?module=cart&action=cart_ajouter_cures" style= "padding: 1.25rem;" method= "post" >
+                  Quantité:
+                  <input type="number" name="cad_qt"
+                   min="0" max="10" step="1" value="1">
+                    <input type="hidden" name="cus_id" id="cus_id" value="<?= $_SESSION["user"]["cus_id"] ?>">
+                    <input type="hidden" id="pro_id" name="pro_id" value="<?= $produit ["pro_id"] ?>">
+                  <button type="submit" class="btn btn-success">Ajouter au panier</button>
+                </form>
+                  
+                  </div> 
+
+                </div>
+
+                
+                
+
+                    <?php } ?>
+
+                 
+         
+             </div>
+
+      
           </div>
 
-          <div class="col-md-6">
-          <img class="card-img-top img-fluid" src="../images/cure_débutante.jpg" alt="">
-            <div class="card-body">
-              <h3 class="card-title">La Cure Débutante</h3>
-              <h4>€49,99</h4>
-              <p class="card-text">Vous souhaitez perdre de la graisse, augmenter votre énergie et vous sentir en bonne santé à nouveau ? 
-              La cure de jus débutante contient des jus pressés à froid riches en nutriments afin de fournir au corps tout ce dont il a besoin pour être dynamique et concentré tout en gardant la faim à distance.
-              </p>           
-            </div>
-          </div>
-
-        </div>
-      </div>
+   
      
 
         
-
-  </div><!-- /.fin du row -->
+</div><!-- /.fin du row -->
   <!-- /.container -->
 
 
-<?php include("../layout/footer.inc.php"); ?>
+<?php 
+
+include("../app/view/layout/footer.inc.php");
+
+?>

@@ -1,55 +1,76 @@
 
 <?php 
 
-include("../layout/header.inc.php"); ?>
+include("../app/view/layout/header.inc.php");
+ ?>
+
+
+    
 
 
   <!-- Page Content -->
   <div class="container">
-
-    
-<div class="row">
-     
+    <div class="row">
       <div class="col-lg-3">
         <h1 class="col-lg-3">Nos Jus</h1>
-        <div class="list-group">
-          <a href="#" class="list-group-item active">Lait de Noix</a>
-          <a href="produit_cures.php" class="list-group-item">Les cures</a>
+      <div class="list-group">
+        <a href="index.php?module=produit&action=produit_laits" class="list-group-item active">Nos Laits</a>
+        <a href="index.php?module=produit&action=produit_cures" class="list-group-item">Nos Cures</a>
         </div>
+      
+      
       </div>
     
+  <div class="col-md-9">
+                
+                  <?php  foreach ($produits as $produit) {
+                    //var_dump($produits);
+                   ?>
+      <div class="row">
+                   <div class="col-sm-1">
+                   </div>
+
+                 <div class="col-sm-4">
+                  <img class="card-img-top img-fluid" src="<?= $produit ["pro_img_url"] ?>" alt="">
+                  </div>
+                   <div class="col-sm-6">
+                    <div class="card-body">
+                      <h3 class="card-title"><?= $produit ["pro_title"] ?></h3>
+                        <h4>€<?= $produit ["pro_price"] ?></h4>
+                          <p class="card-text"><?= $produit ["pro_descr"] ?></p>           
+                   </div>         
+
+               
+              
+
+ 
+
+
+   <form action="index.php?module=cart&action=cart_ajouter_jus" style= "padding: 1.25rem;" method= "post" >
+                  Quantité:
+                  <input type="number" name="cad_qt"
+                   min="0" max="10" step="1" value="1">
+                    <input type="hidden" name="cus_id" id="cus_id" value="<?= $_SESSION["user"]["cus_id"] ?>">
+                    <input type="hidden" id="pro_id" name="pro_id" value="<?= $produit ["pro_id"] ?>">
+                  <button type="submit" class="btn btn-success">Ajouter au panier</button>
+                </form>
+
+
+              </div>
+                  
+    <div class="col-sm-1">
+    </div>
+    </div>
+                   <?php } ?>
       
-      <div class="col-lg-9">
-        <div class="row">
+    
+  </div>
 
-          <div class="col-md-6">
-          <img class="card-img-top img-fluid" src="../images/01.jpg" alt="">
-            <div class="card-body">
-              <h3 class="card-title">Charbon Végétal, Citron, Sirop d'Agave, Eau de Source</h3>
-              <h4>8€00</h4>
-              <p class="card-text">Ce jus rafraichissant utilise l’étonnante poudre de charbon végétal pour détoxifier l’appareil digestif. N’importe quel bon naturopathe vous dira qu’au moins 80% des maladies proviennent de l’appareil digestif. Le citron agit comme un détoxifiant puissant sur le foie. Nous utilisons également de l’agave comme un sucre naturel pour ses actions diurétiques.</p>           
-            </div>
-          </div>
+  </div>
 
-          <div class="col-md-6">
-          <img class="card-img-top img-fluid" src="../images/02.jpg" alt="">
-            <div class="card-body">
-              <h3 class="card-title">Citron, Gingembre, Pomme, Épinard, Chou Kalé, Laitue, Concombre, Cèleri, Persil</h3>
-              <h4>8€00</h4>
-              <p class="card-text">Le jus vert classique que vous trouverez dans les bars à jus pressés à froid partout dans le monde. Goûteux, rafraichissant et extrêmement bon pour vous !
-
-              </p>           
-            </div>
-          </div>
-
-        </div>
-      </div>
-     
-
-        
-
-  </div><!-- /.fin du row -->
-  <!-- /.container -->
+</div>
+         
+    
 
 
-<?php include("../layout/footer.inc.php"); ?>
+<?php include("../app/view/layout/footer.inc.php"); ?>
