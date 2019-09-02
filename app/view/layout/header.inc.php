@@ -47,7 +47,7 @@ td,th {
 
 
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home
+            <a class="nav-link" href="index.php">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -62,9 +62,7 @@ td,th {
            <li class="nav-item">
             <a class="nav-link" href="index.php?module=utilisateur&action=login">Log in</a>
           </li>
-            <li class="nav-item">
-            <a class="nav-link" href="index.php?module=utilisateur&action=register">S'enregistrer</a>
-          </li>
+           
 
           <?php } else { ?>
           <li class="nav-item">

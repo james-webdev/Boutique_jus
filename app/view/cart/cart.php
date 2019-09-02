@@ -100,17 +100,7 @@
   </div>
   <div class="form-group">
 
-    <div class="d-block my-3">
-              <div class="custom-control custom-radio">
-                <input id="express" name="livraisonMethod" type="radio" class="custom-control-input" checked required>
-                <label class="custom-control-label" for="express">Livraison Express (24 heures) €4,99</label>
-              </div>
-              <div class="custom-control custom-radio">
-                <input id="gratuite" name="livraisonMethod" type="radio" class="custom-control-input" required>
-                <label class="custom-control-label" for="gratuite">Livraison Normale (48 heures max) Gratuite </label>
-              </div>
-             
-            </div>
+  
     
 
  <h2 style="text-align: left;margin-top: 10px;">Paiement</h2> 
@@ -120,11 +110,11 @@
             <div class="d-block my-3">
               <div class="custom-control custom-radio">
                 <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-                <label class="custom-control-label" for="credit">Credit card</label>
+                <label class="custom-control-label" for="credit">Carte Crédit</label>
               </div>
               <div class="custom-control custom-radio">
                 <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-                <label class="custom-control-label" for="debit">Debit card</label>
+                <label class="custom-control-label" for="debit">Carte Débit</label>
               </div>
               <div class="custom-control custom-radio">
                 <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
@@ -133,51 +123,42 @@
             </div>
             <div class="row">
               <div class="col-md-6 mb-3">
-                <label for="cc-name">Name on card</label>
+                <label for="cc-name">Nom</label>
                 <input type="text" class="form-control" id="cc-name" placeholder="" required>
-                <small class="text-muted">Full name as displayed on card</small>
+                <small class="text-muted">Nom, Prénom</small>
                 <div class="invalid-feedback">
-                  Name on card is required
+                  Ce champs est requis
                 </div>
               </div>
               <div class="col-md-6 mb-3">
-                <label for="cc-number">Credit card number</label>
+                <label for="cc-number">Numéro de CB</label>
                 <input type="text" class="form-control" id="cc-number" placeholder="" required>
                 <div class="invalid-feedback">
-                  Credit card number is required
+                  Ce champs est requis
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-md-3 mb-3">
-                <label for="cc-expiration">Expiration</label>
+                <label for="cc-expiration">Date d'expiration</label>
                 <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
                 <div class="invalid-feedback">
-                  Expiration date required
+                  Ce champs est requis
                 </div>
               </div>
               <div class="col-md-3 mb-3">
                 <label for="cc-expiration">CVV</label>
                 <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
                 <div class="invalid-feedback">
-                  Security code required
+                  Ce champs est requis
                 </div>
               </div>
             </div>
 
 
 
- <table cellpadding="6" cellspacing="1" style="min-width: 100%; color: #333;margin-bottom:15px;">
 
-                                    <tr>
-                                      <td style="font-size: 20px;font-weight: 600;border:0px;text-align: right;">TOTAL :  </td>
-                                      <td style="border:0px;text-align: right;font-size: 20px;"><?= $total ?> €</td>
-                                    </tr>     
-                                    <tr>
-           
-                             </table>
-
-<button style="float:right;margin-bottom:50px;" type="button" class="btn btn-success" type="submit">Acheter </button>
+<a href="index.php?module=merci&action=merci" style="float:right;margin-bottom:50px;" type="button" class="btn btn-success" type="submit">Acheter </a>
     </div>
     <div class="col-sm-2">
     </div>                       

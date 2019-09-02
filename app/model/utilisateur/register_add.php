@@ -10,7 +10,7 @@ try {
       $query ="
       INSERT INTO st_customers
       (cus_lastname, cus_firstname, cus_password, cus_mail, cus_civility)
-      VALUES ('".$form["cus_nom"]."', '".$form["cus_prenom"]."', '".$form["cus_pass"]."', '".$form["cus_mail"]."', '0')";
+      VALUES ('".$form["cus_nom"]."', '".$form["cus_prenom"]."', '".$form["cus_pass"]."', '".$form["cus_mail"]."', '1')";
 
      /* var_dump($query);*/
       $req = $pdo->prepare($query);

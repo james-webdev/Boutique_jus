@@ -5,7 +5,7 @@ define("APP_LANG", "fr");
 define("APP_CHARSET", "utf-8");
 
 define ("DB_HOST","localhost");
-define ("DB_NAME","store_test");
+define ("DB_NAME","store");
 define ("DB_CHARSET","utf8");
 define ("DB_USER","root");
 define ("DB_PASSWORD","");

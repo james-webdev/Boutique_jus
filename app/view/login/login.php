@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="page-heading">
-            <h1>LOG IN</h1>
+            <h1>Log In</h1>
             
           </div>
         </div>

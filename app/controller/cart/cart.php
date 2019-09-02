@@ -13,17 +13,22 @@
 
 
 
+if ($_SESSION["user"]) {
+
+  include("../app/model/cart/cart_lire_jus.php");
+
+  $cart = cart_lire_jus();
+  $total = 0;
 
 
-include("../app/model/cart/cart_lire_jus.php");
+                       
+   //var_dump($cart); 
+        
+  //$cart = cart(); //var_dump($_SESSION);
 
-$cart = cart_lire_jus();
-$total = 0;
+  include("../app/view/cart/cart.php");
 
+} else {
+  header ("Location: index?module=utilisateur&action=register");
+}
 
-                     
- //var_dump($cart); 
-      
-//$cart = cart(); //var_dump($_SESSION);
-
-include("../app/view/cart/cart.php");

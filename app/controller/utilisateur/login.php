@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if($user) {
 
         $_SESSION["user"] = $user; 
-        if ($_SESSION["user"]["cus_civility"] == "0") {
+        if ($_SESSION["user"]["cus_civility"] == "1") {
             header("location:index.php?module=produit&action=index&notif=ok");
         } else {
             header("location:index.php?module=produit&action=admin_jus&notif=ok");
