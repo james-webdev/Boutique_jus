@@ -76,7 +76,7 @@
             <h2 style="text-align: left;margin-top: 10px;">Adresse de livraison</h2> 
 
 
-<form>
+<form action="index.php?module=produit&action=cart_ajouter_adress" >
   <div class="form-row">
    </div>
   <div class="form-group">

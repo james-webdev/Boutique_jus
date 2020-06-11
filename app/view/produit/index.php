@@ -41,7 +41,7 @@ include("../app/view/layout/header.inc.php");
                               <img class="d-block img-fluid" src="../app/view/images/lineup.jpg" style="width: 100%;" alt="First slide">
                             </div>
                             <div class="carousel-item">
-                              <img class="d-block img-fluid" src="../app/view/images/logo.jpg" style="height: 549px;" alt="Second slide">
+                              <img class="d-block img-fluid" src="../app/view/images/cure_avancée.jpg" style="height: 549px;" alt="Second slide">
                             </div>
                       </div>
 
